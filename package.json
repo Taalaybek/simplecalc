@@ -3,9 +3,13 @@
   "version": "1.0.0",
   "description": "simple calculator with vanilla JS",
   "main": "index.js",
+  "url": "https://github.com/Taalaybek/simplecalc",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Taalay Eshen",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
 }
