@@ -5,10 +5,102 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Calculator</title>
+  <link rel="icon" href="favicon.ico">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  
+  <div class="wrapper">
+    <div class="container">
+      <div class="page__left">
+        <div class="calc__wrapper">
+          <div class="calc__header">
+            <div class="calc__dots">
+              <div class="dot red"></div>
+              <div class="dot yellow"></div>
+              <div class="dot green"></div>
+            </div>
+            <div class="calc__display">
+              <input type="text" class="input" id="input">
+            </div>
+          </div>
+          <div class="calc__keys">
+            <table>
+              <tr>
+                <td>
+                  <button type="button" class="btn btn_ce">ce</button>
+                </td>
+                <td>
+                  <button type="button" class="btn btn_ce">c</button>
+                </td>
+                <td>
+                  <button type="button" class="btn operation">*</button>
+                </td>
+                <td>
+                  <button type="button" class="btn operation">/</button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <button type="button" class="btn numbers">7</button>
+                </td>
+                <td>
+                  <button type="button" class="btn numbers">8</button>
+                </td>
+                <td>
+                  <button type="button" class="btn numbers">9</button>
+                </td>
+                <td>
+                  <button type="button" class="btn operation">-</button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <button type="button" class="btn numbers">4</button>
+                </td>
+                <td>
+                  <button type="button" class="btn numbers">5</button>
+                </td>
+                <td>
+                  <button type="button" class="btn numbers">6</button>
+                </td>
+                <td>
+                  <button type="button" class="btn operation">+</button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <button type="button" class="btn numbers">1</button>
+                </td>
+                <td>
+                  <button type="button" class="btn numbers">2</button>
+                </td>
+                <td>
+                  <button type="button" class="btn numbers">3</button>
+                </td>
+                <td rowspan="2">
+                  <button type="button" class="btn btn_tall" id="result">=</button>
+                </td>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  <button type="button" class="btn numbers btn_long">0</button>
+                </td>
+                <td>
+                  <button type="button" class="btn" id="decimal">.</button>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="page__right">
+        <div class="text__wrapper">
+          <h1 class="text__head">The Simple calculator made in JavaScript</h1>
+          <button class="btn__oppo">Opportunities !</button>
+        </div>
+      </div>
+    </div>
+  </div>
   <script src="js/app.js"></script>
 </body>
 </html>
