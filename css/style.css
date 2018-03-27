@@ -117,17 +117,3 @@ h1 {
   font-size: 3em;
   text-shadow: 3px 2px 6px rgba(177, 150, 150, 1);
 }
-#btn__oppo {
-  cursor: pointer;
-  padding: 0.51em;
-  color: #f6feff;
-  text-align: center;
-  font-size: 1.3em;
-  border-radius: 5px;
-  border: 2px solid white;
-  background-color: #a3cbcb;
-  box-shadow: 2px 4px 22px 3px rgba(0,0,0,0.75);
-}
-#btn__oppo:focus {
-  outline: none;
-}
