@@ -7,8 +7,25 @@ let handleClick = (e) => {
 	display.value = value;
 };
 
-for (let i = 0; i < btns.length; i++) {
-	let btn = btns[i];
-
-	btn.addEventListener('click', handleClick);
+let numberPress = () => {
+	for (let i = 0; i < btns.length; i++) {
+		let btn = btns[i];
+	
+		btn.addEventListener('click', handleClick);
+	};
 };
+numberPress();
+
+let operation = () => {
+
+};
+
+let decimal = () => {
+
+};
+
+let clear = () => {
+
+};
+
+
