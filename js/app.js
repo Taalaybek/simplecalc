@@ -5,33 +5,40 @@ let d = document,
 		display = d.getElementById('input'),
 		result = d.getElementById('result'),
 		numbers = d.querySelectorAll('.number'),
-		dotButton = d.getElementById('.decimal'),
+		dotButton = d.getElementById('decimal'),
 		operations = d.querySelectorAll('.operation');
 
+let handleClick = (e) => {
+	let value = e.target.innerText;
+	display.value = value;
+};
+
 let numberPress = () => {
-	let handleClick = (e) => {
-		let value = e.target.innerText;
-		display.value = value;
-	};
+	for (let i = 0; i < numbers.length; i++) {
+		let number = numbers[i];
 	
-	for (let i = 0; i < btns.length; i++) {
-		let btn = btns[i];
-	
-		btn.addEventListener('click', handleClick);
+		number.addEventListener('click', handleClick);
 	};
 };
 numberPress();
 
 let operation = () => {
-
+	for (let i = 0; i < operations.length; i++) {
+		let operation = operations[i];
+		
+		operation.addEventListener('click', handleClick);
+	}
 };
+operation();
 
 let decimal = () => {
-
+	dotButton.addEventListener('click', handleClick);
 };
+decimal();
 
 let clear = () => {
 
 };
+clear();
 
 
