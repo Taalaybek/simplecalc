@@ -61,13 +61,13 @@ let operation = (op) => {
 				memoryCurrentNumber += localMemoryOperation;
 				break;
 			case '-':
-			memoryCurrentNumber -= localMemoryOperation
+				memoryCurrentNumber -= localMemoryOperation;
 				break;
 			case '*':
-			memoryCurrentNumber *= localMemoryOperation
+				memoryCurrentNumber *= localMemoryOperation;
 				break;
 			case '/':
-				memoryCurrentNumber /= localMemoryOperation
+				memoryCurrentNumber /= localMemoryOperation;
 				break;
 			default:
 				console.log("Oops! We dont know such ariphmethic operation!");
