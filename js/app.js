@@ -100,6 +100,14 @@ let decimal = () => {
 dotButton.addEventListener('click', decimal);
 
 let clear = (id) => {
-	console.log(id);
+	if (id === 'ce') {
+		display.value = '0';
+		MemoryNewNumber = true;
+	} else if (id === 'c') {
+		display.value = '0';
+		MemoryNewNumber = true;
+		MemoryCurrentNumber = 0;
+		MemoryPendingOperation = '';
+	}
 };
 
