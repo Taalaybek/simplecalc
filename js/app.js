@@ -52,7 +52,7 @@ let numberPress = (num) => {
 
 let operation = (op) => {
 
-	let localMemoryOperation = display.value;
+	let localMemoryOperation = parseFloat(display.value);
 
 	if (MemoryNewNumber && MemoryPendingOperation !== '=') {
 		display.value = MemoryCurrentNumber;
@@ -61,15 +61,15 @@ let operation = (op) => {
 		MemoryNewNumber = true;
 
 		if (MemoryPendingOperation === '+') {
-			MemoryCurrentNumber += parseFloat(localMemoryOperation);
+			MemoryCurrentNumber += localMemoryOperation;
 		}else if (MemoryPendingOperation === '-') {
-			MemoryCurrentNumber -= parseFloat(localMemoryOperation);
+			MemoryCurrentNumber -= localMemoryOperation;
 		}else if (MemoryPendingOperation === '/') {
-			MemoryCurrentNumber /= parseFloat(localMemoryOperation);
+			MemoryCurrentNumber /= localMemoryOperation;
 		}else if (MemoryPendingOperation === '*') {
-			MemoryCurrentNumber *= parseFloat(localMemoryOperation);
+			MemoryCurrentNumber *= localMemoryOperation;
 		}else {
-			MemoryCurrentNumber = parseFloat(localMemoryOperation);
+			MemoryCurrentNumber = localMemoryOperation;
 		}
 
 		display.value = MemoryCurrentNumber;
