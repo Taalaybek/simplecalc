@@ -6,9 +6,9 @@ let d = document,
 		clearBtns = d.querySelectorAll('.clear_btn'),
 		operations = d.querySelectorAll('.operation'),
 
-		memoryCurrentNumber = 0,
-		memoryNewNumber = false,
-		memoryPendingOperation = '';
+		MemoryCurrentNumber = 0,
+		MemoryNewNumber = false,
+		MemoryPendingOperation = '';
 
 // Event listener for numbers buttons
 for (let i = 0; i < numbers.length; i++) {
@@ -36,60 +36,70 @@ for (let i = 0; i < clearBtns.length; i++) {
 	});
 }
 
-// dotButton.addEventListener('click', decimal);
-resultBtn.addEventListener('click', (e) => {
- console.log(e.target.textContent);
-});
 
 let numberPress = (num) => {
-	if(display.value === '0'){
-		display.value = num; 
+	if (MemoryNewNumber) {
+		display.value = num;
+		MemoryNewNumber = false;
 	}else {
-		display.value += num;
-	}
-};
-
-let operation = (op) => {
-	let localMemoryOperation = display.value;
-
-	if (memoryNewNumber) {
-		display.value = memoryCurrentNumber;
-	}else {
-		memoryNewNumber = true;
-		switch (op) {
-			case '+':
-				memoryCurrentNumber += localMemoryOperation;
-				break;
-			case '-':
-				memoryCurrentNumber -= localMemoryOperation;
-				break;
-			case '*':
-				memoryCurrentNumber *= localMemoryOperation;
-				break;
-			case '/':
-				memoryCurrentNumber /= localMemoryOperation;
-				break;
-			default:
-				console.log("Oops! We dont know such ariphmethic operation!");
-				break;
+		if(display.value === '0'){
+			display.value = num; 
+		}else {
+			display.value += num;
 		};
 	};
 };
 
-let decimal = () => {
-	console.log("decimal");
+let operation = (op) => {
+
+	let localMemoryOperation = display.value;
+
+	if (MemoryNewNumber && MemoryPendingOperation !== '=') {
+		display.value = MemoryCurrentNumber;
+	}else {
+
+		MemoryNewNumber = true;
+
+		if (MemoryPendingOperation === '+') {
+			MemoryCurrentNumber += parseFloat(localMemoryOperation);
+		}else if (MemoryPendingOperation === '-') {
+			MemoryCurrentNumber -= parseFloat(localMemoryOperation);
+		}else if (MemoryPendingOperation === '/') {
+			MemoryCurrentNumber /= parseFloat(localMemoryOperation);
+		}else if (MemoryPendingOperation === '*') {
+			MemoryCurrentNumber *= parseFloat(localMemoryOperation);
+		}else {
+			MemoryCurrentNumber = parseFloat(localMemoryOperation);
+		}
+
+		display.value = MemoryCurrentNumber;
+		MemoryPendingOperation = op;
+
+	};
 };
 
-// let result = () => {
-// 	console.log("result");
-// }
+let decimal = () => {
+	let localDecimalMemory = display.value;
+
+	if (MemoryNewNumber) {
+
+		localDecimalMemory = '0.';
+		MemoryNewNumber = false;
+
+	}else {
+
+		if (localDecimalMemory.indexOf('.') === -1) {
+			localDecimalMemory += '.';
+		};
+
+	};
+
+	display.value = localDecimalMemory;
+};
+
+dotButton.addEventListener('click', decimal);
 
 let clear = (id) => {
-	if (id === 'ce') {
-		display.value;
-	}else {
-		display.value = "";
-	}
+	console.log(id);
 };
-
 
