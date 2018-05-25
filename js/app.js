@@ -101,11 +101,11 @@ dotButton.addEventListener('click', decimal);
 
 let clear = (id) => {
 	if (id === 'ce') {
-		let strToArr = display.value.split('');
-		strToArr.pop();
-		let newNumber = strToArr.toString();
-		let bgg = newNumber.replace(/,/g,"");
-		display.value = bgg;
+		let localStrToArr = display.value.split(''); // 
+		localStrToArr.pop();
+		let localArrToStr = localStrToArr.toString();
+		let localDeleteCommas = localArrToStr.replace(/,/g,"");
+		display.value = localDeleteCommas;
 	} else if (id === 'c') {
 		display.value = '0';
 		MemoryNewNumber = true;
